@@ -1,0 +1,25 @@
+<% include ./partials/header.ejs %>
+<blockquote class="text-2xl font-semibold italic text-center text-slate-900 mt-4">
+    See
+    <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-red-600 relative inline-block ">
+      <span class="relative text-white">all feeds</span>
+    </span>
+    here
+  </blockquote>
+<div class=" feeds w-full min-h-screen flex flex-wrap px-12 py-14 gap-10">
+    <% posts.forEach(function(elem){ %>
+        <div class="card w-[250px] h-[285px] overflow-hidden flex flex-wrap flex-col">
+            <div class="image-box bg-zinc-100 w-full h-[230px] overflow-hidden bg-center object-cover  rounded-2xl">
+                <img src="/images/uploads/<%= elem.image %>" class="bg-center object-cover w-full h-[230px]">
+            </div>
+            <h4 class="font-semibold text-md px-2 py-1 tracking-wider">@<%= elem.title %></h4>
+            <p class="text-xs px-2"><%= user.username %></p>
+        </div>
+    <% } )%>  
+</div>
+
+
+
+
+
+<% include ./partials/footer.ejs %>

@@ -1,0 +1,25 @@
+<% include ./partials/header.ejs %>
+    <div class="w-full min-h-[85vh]  py-14 px-10 flex items-start justify-center  ">
+        <div class="addpost bg-white w-2/5  p-4 rounded-xl flex justify-center items-center flex-col">
+            <h1 class="text-6xl text-zinc-800  ">ADD NEW POST</h1>
+            <hr class="mt-2 mb-2 bg-zinc-300 h-[2px] w-3/5">
+            <form action="/createpost" method="post" class="flex flex-col w-full" enctype="multipart/form-data">
+                <input type="file" name="postimage" class="block w-full mt-2 text-sm text-slate-500
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-full file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-red-50 file:text-red-700
+                    hover:file:bg-red-100
+                    " />
+                <input type="text" name="title" class="py-2 px-4 mt-2 bg-zinc-100 hover:bg-zinc-200 rounded"
+                    placeholder="title">
+                <textarea name="description" class="py-2 px-4 mt-2 bg-zinc-100 hover:bg-zinc-200 rounded" id=""
+                    cols="30" rows="8" placeholder="description"></textarea>
+                <input type="submit" class="py-2 px-4 mt-2 bg-red-500 hover:bg-red-600 rounded text-white"
+                    value="add post">
+            </form>
+        </div>
+    </div>
+
+
+    <% include ./partials/footer.ejs %>

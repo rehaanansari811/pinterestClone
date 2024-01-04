@@ -1,0 +1,66 @@
+<% include ./partials/header.ejs %>
+<style>
+    .popop-image{
+        position: fixed;
+        top: 0;left: 0;
+        background-color: rgba(0, 0, 0, 9);
+        width:100%;
+        height:100%;
+        z-index: 100;
+        display: none;
+    }
+    .popop-image span{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 40px;
+        font-weight: bolder;
+        color: #fff;
+        cursor: pointer;
+        z-index: 100;
+    }
+    .popop-image img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        border-radius: 25px;
+        width: 750px;
+        height: 500px;
+        object-fit: cover;
+    }
+
+    @media(max-width:768px){
+        .popop-image img{
+            width: 95%;
+        } 
+    }
+</style>
+<blockquote class="text-2xl font-semibold italic text-center text-slate-900 mt-4">
+    See
+    <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-red-600 relative inline-block ">
+      <span class="relative text-white">all Pins</span>
+    </span>
+    here
+  </blockquote>
+<div class=" pins w-full min-h-screen flex flex-wrap px-12 py-14 gap-10">
+    <% user.posts.forEach(function(elem){ %>
+        <div class="card  w-[250px] h-[285px] overflow-hidden flex flex-wrap flex-col">
+            <a href="/images/uploads/<%= elem.image %>" class="" >
+                <div class="image-box bg-zinc-100 w-full h-[230px]  bg-center object-cover rounded-2xl">
+                    <img src="/images/uploads/<%= elem.image %>" class="bg-center object-cover w-full h-[230px] rounded-2xl">
+                </div>
+            </a>
+            <h4 class="font-semibold text-md px-2 py-1 tracking-wider"><%= elem.title %></h4>
+            <p class="text-xs px-2">@<%= user.username %></p>
+        </div>
+        <% } )%>  
+    </div>
+
+
+
+
+
+
+
+<% include ./partials/footer.ejs %>

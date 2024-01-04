@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Pinterest Clone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <% if(nav===true){ %>
+    <div class="header w-full py-3 px-3  text-white flex items-center gap-3 justify-evenly">
+      <div class="left flex items-center gap-5">
+        <img src="/images/logo of pinterest.png" class="h-8 w-8">
+        <a href="/profile" class="font-semibold px-4 py-2 bg-gray-800 rounded-full text-white">profile</a>
+      </div>
+      <div class="center w-[65vw] text-black">
+        <input type="text" class="px-4 py-2 rounded-full w-full border border-zinc-300 outline-blue-300"
+          placeholder="🔍 search">
+      </div>
+      <div class="right flex items-center justify-evenly gap-3">
+        <a href="/user/posts" class="font-semibold text-black px-4 py-2  hover:bg-zinc-100 rounded-full ">pins</a>
+        <a href="/feed" class="font-semibold text-black px-4 py-2  hover:bg-zinc-100 rounded-full">feeds</a>
+        <a href="/logout" class="font-semibold px-4 py-2 bg-red-600 hover:bg-red-700 rounded-full">logout</a>
+      </div>
+    </div>
+    <% } %>
